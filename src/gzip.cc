@@ -205,7 +205,7 @@ class GunzipImpl {
     stream_.avail_in = 0;
     stream_.next_in = Z_NULL;
 
-    int ret = inflateInit2(&stream_, 16 + MAX_WBITS);
+    int ret = inflateInit2(&stream_, MAX_WBITS);
     if (Utils::IsError(ret)) {
       return ThrowException(Utils::GetException(ret));
     }
